@@ -52,8 +52,12 @@
    "date": "2026-11-27",
    "desc": "A specialized system for monitoring and reporting commodity prices from different markets in Cagayan de Oro City.",
    "tech": "PHP 8.4+, Laravel 13, React 19, MySQL, Tailwind CSS, Javascript/Typescript, Laravel Herd",
-   "images": [],
-   "thumb": "",
+   "images": [
+    "assets/uploads/8b282d751e74.png",
+    "assets/uploads/20a048fb9ed3.png",
+    "assets/uploads/0844c0dd71b4.png"
+   ],
+   "thumb": "assets/uploads/8b282d751e74.png",
    "demo": "",
    "repo": ""
   }
