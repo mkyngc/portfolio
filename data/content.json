@@ -1,0 +1,237 @@
+{
+ "profile": {
+  "name": "Your Name",
+  "title": "IT Professional & Web Enthusiast",
+  "welcome": "Welcome to my portfolio",
+  "badgeTitle": "Creative & Tech-Savvy",
+  "badgeText": "Always learning and growing",
+  "tagline": "I am passionate about technology, web development, digital innovation, and creating meaningful solutions through technology.",
+  "photo": "",
+  "resume": "",
+  "resumeName": "",
+  "bio": "I am a developer who works where design meets data. I turn spreadsheets, survey layers and rough ideas into websites people actually enjoy using. I care about accessible markup, honest performance, and details that make a product feel considered.",
+  "education": "BS Information Technology | Your University | 2018 – 2022\nCertificate in GIS and Web Mapping | Online Program | 2023",
+  "experience": "Front-End Developer | Studio Example | 2022 – 2024\nGIS Analyst | Mapping Lab | 2024 – Present",
+  "interests": "Web mapping, accessible design, open data, design systems",
+  "goals": "To lead product teams that build civic and environmental tools, and to keep mentoring early-career developers.",
+  "socials": {
+   "github": "https://github.com",
+   "linkedin": "https://linkedin.com",
+   "facebook": "https://facebook.com"
+  }
+ },
+ "contact": {
+  "email": "hello@example.com",
+  "phone": "+00 000 000 0000",
+  "location": "Your City, Country"
+ },
+ "projects": [
+  {
+   "id": "5zkzj2k",
+   "title": "Barangay Atlas",
+   "category": "GIS",
+   "date": "2025-08-01",
+   "desc": "An interactive web map that lets residents explore flood zones, evacuation centers and health facilities with offline-friendly layers.",
+   "tech": "Leaflet, JavaScript, GeoJSON",
+   "thumb": "",
+   "demo": "#",
+   "repo": "#",
+   "status": "Published"
+  },
+  {
+   "id": "j22b2xf",
+   "title": "Petal Planner",
+   "category": "Web App",
+   "date": "2025-03-12",
+   "desc": "A habit and task planner with drag-and-drop boards, reminders and a quiet, distraction-free layout.",
+   "tech": "HTML, CSS, JavaScript",
+   "thumb": "",
+   "demo": "#",
+   "repo": "#",
+   "status": "Published"
+  },
+  {
+   "id": "86rddle",
+   "title": "Studio Lumen",
+   "category": "Website",
+   "date": "2024-11-20",
+   "desc": "A responsive marketing site for a photography studio, built for speed with a lightweight gallery and booking form.",
+   "tech": "HTML, CSS, JavaScript",
+   "thumb": "",
+   "demo": "#",
+   "repo": "#",
+   "status": "Published"
+  },
+  {
+   "id": "1zlm00o",
+   "title": "Clinic Queue",
+   "category": "Web App",
+   "date": "2024-05-04",
+   "desc": "A queue-tracking dashboard for a community clinic with live status cards and a printable daily report.",
+   "tech": "PHP, MySQL, JavaScript",
+   "thumb": "",
+   "demo": "#",
+   "repo": "#",
+   "status": "Published"
+  }
+ ],
+ "skills": [
+  {
+   "id": "s5rv24x",
+   "name": "JavaScript",
+   "cat": "Programming Languages",
+   "icon": "fa-brands fa-js",
+   "level": 90
+  },
+  {
+   "id": "wmowilg",
+   "name": "Python",
+   "cat": "Programming Languages",
+   "icon": "fa-brands fa-python",
+   "level": 75
+  },
+  {
+   "id": "pv5bsxx",
+   "name": "HTML5",
+   "cat": "Front-End Development",
+   "icon": "fa-brands fa-html5",
+   "level": 95
+  },
+  {
+   "id": "5k1bhrb",
+   "name": "CSS3",
+   "cat": "Front-End Development",
+   "icon": "fa-brands fa-css3-alt",
+   "level": 92
+  },
+  {
+   "id": "yp6cmxd",
+   "name": "PHP",
+   "cat": "Back-End Development",
+   "icon": "fa-brands fa-php",
+   "level": 70
+  },
+  {
+   "id": "mv70ksw",
+   "name": "Node.js",
+   "cat": "Back-End Development",
+   "icon": "fa-brands fa-node-js",
+   "level": 65
+  },
+  {
+   "id": "rggmdp9",
+   "name": "MySQL",
+   "cat": "Database Management",
+   "icon": "fa-solid fa-database",
+   "level": 80
+  },
+  {
+   "id": "5e5buif",
+   "name": "PostgreSQL",
+   "cat": "Database Management",
+   "icon": "fa-solid fa-server",
+   "level": 70
+  },
+  {
+   "id": "8lor8xo",
+   "name": "React",
+   "cat": "Frameworks and Libraries",
+   "icon": "fa-brands fa-react",
+   "level": 70
+  },
+  {
+   "id": "ldmxwiq",
+   "name": "Bootstrap",
+   "cat": "Frameworks and Libraries",
+   "icon": "fa-brands fa-bootstrap",
+   "level": 85
+  },
+  {
+   "id": "ike28by",
+   "name": "QGIS",
+   "cat": "GIS and Mapping Tools",
+   "icon": "fa-solid fa-earth-asia",
+   "level": 85
+  },
+  {
+   "id": "5hdr5xx",
+   "name": "Leaflet",
+   "cat": "GIS and Mapping Tools",
+   "icon": "fa-solid fa-map-location-dot",
+   "level": 80
+  },
+  {
+   "id": "x6cigvn",
+   "name": "Figma",
+   "cat": "Design and Productivity Tools",
+   "icon": "fa-brands fa-figma",
+   "level": 80
+  },
+  {
+   "id": "5765z5b",
+   "name": "Git",
+   "cat": "Other Technical Skills",
+   "icon": "fa-brands fa-git-alt",
+   "level": 85
+  }
+ ],
+ "certs": [
+  {
+   "id": "2fvr173",
+   "title": "Responsive Web Design",
+   "org": "Example Academy",
+   "date": "2023-06-15",
+   "desc": "Covered semantic HTML, flexbox, grid and accessible design practice.",
+   "file": "",
+   "fileName": "",
+   "visible": "Visible"
+  },
+  {
+   "id": "4jsv1tv",
+   "title": "GIS Fundamentals",
+   "org": "Geospatial Institute",
+   "date": "2023-09-02",
+   "desc": "Spatial data models, projections and cartographic design in QGIS.",
+   "file": "",
+   "fileName": "",
+   "visible": "Visible"
+  },
+  {
+   "id": "2xhzn3d",
+   "title": "Python for Data Analysis",
+   "org": "Online Academy",
+   "date": "2024-02-10",
+   "desc": "Data cleaning, analysis and visualization with pandas and matplotlib.",
+   "file": "",
+   "fileName": "",
+   "visible": "Visible"
+  },
+  {
+   "id": "t9xujwo",
+   "title": "UI/UX Design Essentials",
+   "org": "Design Institute",
+   "date": "2024-07-22",
+   "desc": "User research, wireframing and prototyping fundamentals.",
+   "file": "",
+   "fileName": "",
+   "visible": "Visible"
+  }
+ ],
+ "messages": [],
+ "settings": {
+  "title": "My Portfolio",
+  "logoText": "My Portfolio",
+  "seoTitle": "Your Name – IT Professional & Web Enthusiast",
+  "seoDesc": "Personal portfolio of an IT professional and web enthusiast.",
+  "footer": "© 2026 Your Name. All Rights Reserved.",
+  "accent": "#B2757C",
+  "favicon": "",
+  "sections": {
+   "about": true,
+   "projects": true,
+   "skills": true,
+   "certs": true,
+   "contact": true
+  }
+ }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact</title><script>try{document.documentElement.dataset.theme=localStorage.getItem("pf_theme")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script><meta name="description" content="Get in touch.">
+<meta name="view-transition" content="same-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page-title="Contact">
+<header class="nav"><div class="wrap">
+  <a href="index.html" class="brand"><span class="mark" id="logoMark">M.</span><span class="logo" id="logoText">My Portfolio</span></a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  <ul class="links" id="links">
+    <li><a href="index.html">Home</a></li>
+    <li data-s="about"><a href="about.html">About Me</a></li>
+    <li data-s="projects"><a href="projects.html">Projects</a></li>
+    <li data-s="skills"><a href="skills.html">Skills</a></li>
+    <li data-s="certs"><a href="certificate.html">Certificate</a></li>
+    <li data-s="contact"><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="navend"><button class="theme" id="theme" aria-label="Switch to light theme"><i class="fa-solid fa-sun"></i></button><a class="btn talk" href="contact.html" data-s="contact">Let’s Talk <span aria-hidden="true">↗</span></a></div>
+</div></header>
+<main>
+<section class="contact" id="contact" data-s="contact"><div class="wrap">
+  <div class="c-head" data-reveal><h2>Let’s work together</h2><p class="lead" style="margin-bottom:0">Have a project or a question? Reach out directly — I’ll get back to you within a few days.</p></div>
+  <div class="c-cards">
+    <a class="c-card" id="cEmail" href="#" data-reveal style="--i:0"><span class="c-ic"><i class="fa-solid fa-envelope"></i></span><div><small>Email</small><strong id="cEmailText">—</strong></div></a>
+    <a class="c-card" id="cPhone" href="#" data-reveal style="--i:1"><span class="c-ic"><i class="fa-solid fa-phone"></i></span><div><small>Phone</small><strong id="cPhoneText">—</strong></div></a>
+    <div class="c-card" data-reveal style="--i:2"><span class="c-ic"><i class="fa-solid fa-location-dot"></i></span><div><small>Location</small><strong id="cLocText">—</strong></div></div>
+  </div>
+  <div class="socials" id="cSocials" data-reveal style="--i:3"></div>
+</div></section>
+</main>
+<footer><div class="wrap foot"><span id="foot"></span><span>Designed with care <i class="fa-solid fa-heart"></i></span></div></footer>
+<div class="modal big" id="modal" role="dialog" aria-modal="true"><div class="box"><button class="x" id="mx" aria-label="Close">✕</button><div id="mBody"></div></div></div>
+<script src="assets/js/storage.js"></script><script>Store.init().then(()=>{const s=document.createElement("script");s.src="assets/js/main.js";document.body.append(s)})</script>
+</body></html>

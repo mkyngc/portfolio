@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/admin.css"></head>
+<body><div class="app">
+<nav class="side" id="side" aria-label="Admin">
+ <a class="logo" href="#overview">Dashboard</a>
+ <a href="#overview"><i class="fa-solid fa-gauge"></i>Overview</a><a href="#profile"><i class="fa-solid fa-user"></i>Profile</a>
+ <a href="#projects"><i class="fa-solid fa-folder-open"></i>Projects</a><a href="#skills"><i class="fa-solid fa-layer-group"></i>Skills</a>
+ <a href="#certs"><i class="fa-solid fa-award"></i>Certificates</a><a href="#contact"><i class="fa-solid fa-address-book"></i>Contact info</a>
+ <a href="#messages"><i class="fa-solid fa-envelope"></i>Messages<span class="badge" id="unread" hidden></span></a><a href="#publishing"><i class="fa-solid fa-cloud-arrow-up"></i>Publishing</a><a href="#settings"><i class="fa-solid fa-gear"></i>Settings</a>
+</nav>
+<div class="main">
+ <div class="top"><button class="menu" id="menu" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button><a id="pubst" class="pubst" href="#publishing"></a>
+  <div class="prof"><button id="pbtn" aria-haspopup="true"><span class="av" id="av"></span><span id="un"></span><i class="fa-solid fa-chevron-down" style="font-size:.7rem"></i></button>
+   <div class="dd" id="dd"><a href="../index.html" target="_blank">View portfolio</a><button id="out">Log out</button></div></div></div>
+ <main id="view"></main>
+</div></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="box" id="mbox" style="padding:28px"></div></div>
+<script src="../assets/js/storage.js"></script><script src="../assets/js/auth.js"></script><script src="../assets/js/publish.js"></script>
+<script>Store.base="../";if(!Auth.session())location.replace("../login.html");else Pub.boot().then(()=>{const s=document.createElement("script");s.src="../assets/js/admin.js";document.body.append(s)})</script>
+</body></html>

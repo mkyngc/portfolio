@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin login</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>body{display:grid;place-items:center;min-height:100vh;padding:20px;background:linear-gradient(160deg,var(--cream),var(--blush))}
+.lg{width:min(420px,100%);background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:36px}.lg h1{font-size:2rem;margin-bottom:6px}
+.pw{position:relative}.pw button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;cursor:pointer;color:var(--mauve);padding:8px}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:.88rem;margin:4px 0 20px}.row label{display:flex;gap:8px;align-items:center;margin:0}.row input{width:auto}
+.note{background:var(--blush);border-radius:12px;padding:12px 14px;font-size:.83rem;margin-top:22px;color:#5d5d66}</style></head>
+<body><main class="lg">
+<h1 id="t">Admin login</h1><p class="meta" id="s" style="margin-bottom:24px"></p>
+<form id="f" novalidate>
+ <div class="f"><label for="u">Username or email</label><input id="u" autocomplete="username"><div class="err"></div></div>
+ <div class="f"><label for="p">Password</label><div class="pw"><input id="p" type="password" autocomplete="current-password"><button type="button" id="eye" aria-label="Show password"><i class="fa-solid fa-eye"></i></button></div><div class="err"></div></div>
+ <div class="row"><label><input type="checkbox" id="r"> Remember me</label><a href="#" id="forgot">Forgot password?</a></div>
+ <button class="btn" style="width:100%;justify-content:center" id="b">Log in</button>
+</form>
+<p style="text-align:center;margin-top:18px;font-size:.9rem"><a href="index.html">← Back to portfolio</a></p>
+<p class="note"><strong>Prototype notice:</strong> this login is simulated and runs only in this browser. It is not secure. A production site needs a backend for authentication and shared data.</p>
+</main>
+<div id="toasts"></div>
+<script src="assets/js/storage.js"></script><script src="assets/js/auth.js"></script>
+<script>
+if (Auth.session()) location.replace('admin/dashboard.html');
+let setup = !Auth.hasAccount();
+const paint = () => { $('#t').textContent = setup ? 'Create admin account' : 'Admin login'; $('#s').textContent = setup ? 'First visit: choose the login you’ll use for this prototype.' : 'Sign in to manage your portfolio.'; $('#b').textContent = setup ? 'Create account' : 'Log in'; $('#p').autocomplete = setup ? 'new-password' : 'current-password'; };
+paint();
+$('#eye').onclick = () => { const p = $('#p'), show = p.type === 'password'; p.type = show ? 'text' : 'password'; $('#eye').innerHTML = `<i class="fa-solid fa-eye${show ? '-slash' : ''}"></i>`; $('#eye').setAttribute('aria-label', show ? 'Hide password' : 'Show password'); };
+$('#forgot').onclick = e => { e.preventDefault(); if (confirm('Without a backend, passwords can’t be emailed. Reset this prototype account? Your portfolio content is kept, and you’ll create a new login.')) { Auth.resetAccount(); setup = true; paint(); toast('Account reset. Create a new login.'); } };
+$('#f').onsubmit = async e => {
+  e.preventDefault(); const u = $('#u'), p = $('#p'); let ok = true;
+  const chk = (el, bad, msg) => { el.classList.toggle('bad', bad); (el.closest('.f')).querySelector('.err').textContent = bad ? msg : ''; if (bad) ok = false; };
+  chk(u, u.value.trim().length < 3, 'Enter at least 3 characters.'); chk(p, setup ? p.value.length < 10 : !p.value, setup ? 'Use at least 10 characters.' : 'Enter your password.');
+  if (!ok) return;
+  const b = $('#b'); b.disabled = true; b.textContent = 'Please wait…';
+  if (setup) { await Auth.register(u.value.trim(), p.value); setup = false; }
+  if (await Auth.login(u.value.trim(), p.value, $('#r').checked)) location.href = 'admin/dashboard.html';
+  else { toast('Incorrect username or password.', 'err'); b.disabled = false; paint(); }
+};
+</script></body></html>
