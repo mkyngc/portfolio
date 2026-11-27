@@ -165,12 +165,12 @@
  "certs": [
   {
    "id": "2fvr173",
-   "title": "Responsive Web Design",
-   "org": "Example Academy",
-   "date": "2023-06-15",
-   "desc": "Covered semantic HTML, flexbox, grid and accessible design practice.",
-   "file": "",
-   "fileName": "",
+   "title": "Introduction to QA Software Testing",
+   "org": "FLIGNO",
+   "date": "2023-09-16",
+   "desc": "This course is designed introduce you to the concepts of quality assurance (QA) and software testing.",
+   "file": "assets/uploads/3166d6eb686f.jpg",
+   "fileName": "QA Software Testing - September 16, 2023_page-0001.jpg",
    "visible": "Visible"
   },
   {
