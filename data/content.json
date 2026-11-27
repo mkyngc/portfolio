@@ -28,30 +28,6 @@
  },
  "projects": [
   {
-   "id": "5zkzj2k",
-   "title": "Barangay Atlas",
-   "category": "GIS",
-   "date": "2025-08-01",
-   "desc": "An interactive web map that lets residents explore flood zones, evacuation centers and health facilities with offline-friendly layers.",
-   "tech": "Leaflet, JavaScript, GeoJSON",
-   "thumb": "",
-   "demo": "#",
-   "repo": "#",
-   "status": "Published"
-  },
-  {
-   "id": "j22b2xf",
-   "title": "Petal Planner",
-   "category": "Web App",
-   "date": "2025-03-12",
-   "desc": "A habit and task planner with drag-and-drop boards, reminders and a quiet, distraction-free layout.",
-   "tech": "HTML, CSS, JavaScript",
-   "thumb": "",
-   "demo": "#",
-   "repo": "#",
-   "status": "Published"
-  },
-  {
    "id": "86rddle",
    "title": "Studio Lumen",
    "category": "Website",
