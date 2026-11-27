@@ -222,10 +222,10 @@
  "settings": {
   "title": "My Portfolio",
   "logoText": "My Portfolio",
-  "seoTitle": "Your Name – IT Professional & Web Enthusiast",
-  "seoDesc": "Personal portfolio of an IT professional and web enthusiast.",
-  "footer": "© 2026 Your Name. All Rights Reserved.",
-  "accent": "#B2757C",
+  "seoTitle": "My Portfolio",
+  "seoDesc": "Personal portfolio of an IT girly.",
+  "footer": "© 2026 Michaela. All Rights Reserved.",
+  "accent": "#b2757c",
   "favicon": "",
   "sections": {
    "about": true,
