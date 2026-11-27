@@ -25,5 +25,5 @@ Pure static site. The dashboard saves your content by committing it to **this Gi
 ## Good to know
 - Use the dashboard on the deployed site (github.io). Opened from your computer, uploaded images live in GitHub, not in your local folder, so they will not preview locally.
 - Files you remove in the dashboard stay in `assets/uploads/` (harmless; delete them on GitHub if you want).
-- Uploaded files are limited to 1.5 MB each.
+- Photos are uploaded exactly as chosen: no size limit and no resizing, so the original resolution is kept (GitHub accepts files up to 100 MB).
 - Editing from another device: log in there, enter the same token, and the latest published content is loaded.
