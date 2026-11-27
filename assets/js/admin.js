@@ -2,20 +2,20 @@ const sess = Auth.guard(); let D = Store.load();
 const persist = () => {
   const r = Store.save(D);
   if (r === true) { Pub.schedule(() => D); return true; }
-  toast(r === 'quota' ? 'Storage is full. Use smaller files or remove some content.' : 'Could not save: this browser is blocking storage (private window, or storage disabled). Nothing was saved.', 'err');
+  if (r === 'quota' && Pub.ready()) { Pub.schedule(() => D); return true; } // large photos: kept in memory and published at full size
+  toast(r === 'quota' ? 'Photo is too large to keep as a browser draft. Connect GitHub on the Publishing page so it can be published at full size.' : 'Could not save: this browser is blocking storage (private window, or storage disabled). Nothing was saved.', 'err');
   return false;
 };
 if (!Store.available()) setTimeout(() => toast('This browser is blocking storage, so changes will NOT be saved. Use a normal (non-private) window.', 'err'), 600);
 const get = (o, p) => p.split('.').reduce((a, k) => a?.[k], o);
 const set = (o, p, v) => { const ks = p.split('.'), l = ks.pop(); ks.reduce((a, k) => a[k] ??= {}, o)[l] = v; };
 const CATS = ['Programming Languages', 'Front-End Development', 'Back-End Development', 'Database Management', 'Frameworks and Libraries', 'GIS and Mapping Tools', 'Design and Productivity Tools', 'Other Technical Skills'];
-const MAX = 1.5 * 1024 * 1024;
-const readFile = f => new Promise((res, rej) => { if (f.size > MAX) return rej(new Error(`${f.name} is over 1.5 MB. Choose a smaller file.`)); const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(new Error('Could not read file.')); r.readAsDataURL(f); });
+const readFile = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(new Error('Could not read file.')); r.readAsDataURL(f); });
 
 const MODS = {
   projects: { label: 'Project', list: 'projects', cols: [['title', 'Title'], ['category', 'Category'], ['status', 'Status']], def: { status: 'Published' }, fields: [
     { k: 'title', l: 'Title', req: 1 }, { k: 'category', l: 'Category', req: 1, h: 'Used for the filter buttons.' }, { k: 'date', l: 'Date', t: 'date' }, { k: 'status', l: 'Visibility', t: 'select', o: ['Published', 'Draft'] },
-    { k: 'desc', l: 'Description', t: 'textarea', req: 1, full: 1 }, { k: 'tech', l: 'Technologies', h: 'Separate with commas.', full: 1 }, { k: 'images', l: 'Project photos', t: 'gallery', accept: 'image/*', full: 1, h: 'Select one or more photos. The first one is the cover shown on the project card. Max 1.5 MB each.' },
+    { k: 'desc', l: 'Description', t: 'textarea', req: 1, full: 1 }, { k: 'tech', l: 'Technologies', h: 'Separate with commas.', full: 1 }, { k: 'images', l: 'Project photos', t: 'gallery', accept: 'image/*', full: 1, h: 'Select one or more photos. The first one is the cover shown on the project card.' },
     { k: 'demo', l: 'Live demo URL', t: 'url' }, { k: 'repo', l: 'GitHub URL', t: 'url' }] },
   skills: { label: 'Skill', list: 'skills', cols: [['name', 'Skill'], ['cat', 'Category'], ['level', 'Level %']], reorder: 1, def: { cat: CATS[0], level: 70, icon: 'fa-solid fa-code' }, fields: [
     { k: 'name', l: 'Name', req: 1 }, { k: 'cat', l: 'Category', t: 'select', o: CATS }, { k: 'icon', l: 'Icon class', h: 'A Font Awesome class, e.g. fa-brands fa-js' }, { k: 'level', l: 'Proficiency (0–100)', t: 'number' }] },
@@ -44,7 +44,7 @@ function fieldHtml(f, v) {
   const id = 'f_' + f.k.replace(/\./g, '_'); let i;
   if (f.t === 'textarea') i = `<textarea id="${id}" name="${f.k}">${esc(v)}</textarea>`;
   else if (f.t === 'select') i = `<select id="${id}" name="${f.k}">${f.o.map(o => `<option ${o === v ? 'selected' : ''}>${esc(o)}</option>`).join('')}</select>`;
-  else if (f.t === 'file') i = `<input type="file" id="${id}" name="${f.k}" accept="${f.accept}">${isImg(v) ? `<img class="thumb" src="${Store.src(v)}" alt="">` : ''}<div class="hint">${v ? 'A file is saved. Choose another to replace it.' : 'No file yet. Max 1.5 MB.'}</div>`;
+  else if (f.t === 'file') i = `<input type="file" id="${id}" name="${f.k}" accept="${f.accept}">${isImg(v) ? `<img class="thumb" src="${Store.src(v)}" alt="">` : ''}<div class="hint">${v ? 'A file is saved. Choose another to replace it.' : 'No file yet.'}</div>`;
   else if (f.t === 'gallery') i = `<input type="file" id="${id}" name="${f.k}" accept="${f.accept}" multiple><div class="gal" data-gal></div>`;
   else if (f.t === 'check') return `<div class="sw full"><input type="checkbox" id="${id}" name="${f.k}" ${v !== false ? 'checked' : ''}><label for="${id}">${f.l}</label></div>`;
   else i = `<input id="${id}" name="${f.k}" type="${f.t || 'text'}" value="${esc(v)}" ${f.t === 'number' ? 'min="0" max="100"' : ''}>`;
