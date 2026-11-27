@@ -10,7 +10,22 @@ if (!Store.available()) setTimeout(() => toast('This browser is blocking storage
 const get = (o, p) => p.split('.').reduce((a, k) => a?.[k], o);
 const set = (o, p, v) => { const ks = p.split('.'), l = ks.pop(); ks.reduce((a, k) => a[k] ??= {}, o)[l] = v; };
 const CATS = ['Programming Languages', 'Front-End Development', 'Back-End Development', 'Database Management', 'Frameworks and Libraries', 'GIS and Mapping Tools', 'Design and Productivity Tools', 'Other Technical Skills'];
-const readFile = f => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(new Error('Could not read file.')); r.readAsDataURL(f); });
+const MIME = { jpg: 'image/jpeg', jpeg: 'image/jpeg', jfif: 'image/jpeg', png: 'image/png', gif: 'image/gif', webp: 'image/webp', svg: 'image/svg+xml', avif: 'image/avif', bmp: 'image/bmp', ico: 'image/x-icon', pdf: 'application/pdf' };
+// Reads the file untouched (original size and resolution). Fixes a missing MIME type and rejects images the browser cannot display.
+const readFile = f => new Promise((res, rej) => {
+  const type = f.type && f.type !== 'application/octet-stream' ? f.type : MIME[(f.name.split('.').pop() || '').toLowerCase()];
+  if (!type) return rej(new Error(`${f.name}: this file type is not supported. Use JPG, PNG, WEBP or GIF.`));
+  const r = new FileReader();
+  r.onerror = () => rej(new Error('Could not read file.'));
+  r.onload = () => {
+    const url = String(r.result).replace(/^data:[^;,]*/, 'data:' + type);
+    if (!type.startsWith('image/') || type === 'image/x-icon') return res(url);
+    const im = new Image(); im.onload = () => res(url);
+    im.onerror = () => rej(new Error(`${f.name} cannot be displayed by this browser (HEIC/HEIF photos are not supported). Convert it to JPG or PNG first.`));
+    im.src = url;
+  };
+  r.readAsDataURL(f);
+});
 
 const MODS = {
   projects: { label: 'Project', list: 'projects', cols: [['title', 'Title'], ['category', 'Category'], ['status', 'Status']], def: { status: 'Published' }, fields: [
