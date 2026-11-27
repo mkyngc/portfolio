@@ -34,15 +34,11 @@
    "date": "2026-12-04",
    "desc": "A broader agricultural information portal that brings different agricultural services and information together, including data from Bantay Presyo.",
    "tech": "PHP 8.3+, Laravel 13, React 19, JavaScript/TypeScript, MySQL, Tailwind CSS, Laravel Herd, Leaflet",
-   "thumb": "assets/uploads/3fae2d017a61.png",
+   "thumb": "",
    "demo": "",
    "repo": "",
    "status": "Published",
-   "images": [
-    "assets/uploads/3fae2d017a61.png",
-    "assets/uploads/ba553abf7d1c.png",
-    "assets/uploads/6c85c849b198.png"
-   ]
+   "images": []
   },
   {
    "status": "Published",
