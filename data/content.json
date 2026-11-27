@@ -28,18 +28,6 @@
  },
  "projects": [
   {
-   "id": "86rddle",
-   "title": "Studio Lumen",
-   "category": "Website",
-   "date": "2024-11-20",
-   "desc": "A responsive marketing site for a photography studio, built for speed with a lightweight gallery and booking form.",
-   "tech": "HTML, CSS, JavaScript",
-   "thumb": "",
-   "demo": "#",
-   "repo": "#",
-   "status": "Published"
-  },
-  {
    "id": "1zlm00o",
    "title": "Clinic Queue",
    "category": "Web App",
