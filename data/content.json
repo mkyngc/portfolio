@@ -29,15 +29,16 @@
  "projects": [
   {
    "id": "1zlm00o",
-   "title": "Clinic Queue",
-   "category": "Web App",
-   "date": "2024-05-04",
-   "desc": "A queue-tracking dashboard for a community clinic with live status cards and a printable daily report.",
-   "tech": "PHP, MySQL, JavaScript",
+   "title": "Centralized Agricultural Information System",
+   "category": "Website",
+   "date": "2026-12-04",
+   "desc": "A broader agricultural information portal that brings different agricultural services and information together, including data from Bantay Presyo.",
+   "tech": "PHP 8.3+, Laravel 13, React 19, JavaScript/TypeScript, MySQL, Tailwind CSS, Laravel Herd, Leaflet",
    "thumb": "",
-   "demo": "#",
-   "repo": "#",
-   "status": "Published"
+   "demo": "",
+   "repo": "",
+   "status": "Published",
+   "images": []
   }
  ],
  "skills": [
