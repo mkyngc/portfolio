@@ -49,7 +49,7 @@ function renderProfile() {
   const photo = P.photo ? `<img src="${esc(P.photo)}" alt="${esc(P.name)}">` : AVATAR;
   if ($('#hPhoto')) $('#hPhoto').innerHTML = photo;
   if ($('#aPhoto')) $('#aPhoto').innerHTML = P.aboutPhoto ? `<img src="${esc(P.aboutPhoto)}" alt="${esc(P.name)}">` : photo;
-  if ($('#aBio')) $('#aBio').textContent = P.bio;
+  if ($('#aBio')) { const b = $('#aBio'); b.style.whiteSpace = 'pre-line'; b.textContent = String(P.bio || '').replace(/\r\n?/g, '\n').trim().replace(/\n{3,}/g, '\n\n'); } // keeps the paragraphs and line breaks as typed in the dashboard
   if ($('#aInt')) $('#aInt').textContent = P.interests;
   if ($('#aGoal')) $('#aGoal').textContent = P.goals;
   const tl = rows => rows.map(r => `<li><strong>${esc(r[0])}</strong><small>${esc(r[1] || '')}${r[2] ? ' \u00b7 ' + esc(r[2]) : ''}</small></li>`).join('');
