@@ -1,12 +1,12 @@
 {
  "profile": {
-  "name": "Your Name",
-  "title": "IT Professional & Web Enthusiast",
+  "name": "Michaela Nagac",
+  "title": "",
   "welcome": "Welcome to my portfolio",
   "badgeTitle": "Creative & Tech-Savvy",
   "badgeText": "Always learning and growing",
   "tagline": "I am passionate about technology, web development, digital innovation, and creating meaningful solutions through technology.",
-  "photo": "",
+  "photo": "assets/uploads/07c8c73f774b.jpg",
   "resume": "",
   "resumeName": "",
   "bio": "I am a developer who works where design meets data. I turn spreadsheets, survey layers and rough ideas into websites people actually enjoy using. I care about accessible markup, honest performance, and details that make a product feel considered.",
@@ -18,7 +18,8 @@
    "github": "https://github.com",
    "linkedin": "https://linkedin.com",
    "facebook": "https://facebook.com"
-  }
+  },
+  "aboutPhoto": "assets/uploads/d732de70ebfa.jpg"
  },
  "contact": {
   "email": "hello@example.com",
