@@ -39,6 +39,19 @@
    "repo": "",
    "status": "Published",
    "images": []
+  },
+  {
+   "status": "Published",
+   "id": "l05l723",
+   "title": "Bantay Presyo System",
+   "category": "Website",
+   "date": "2026-11-27",
+   "desc": "A specialized system for monitoring and reporting commodity prices from different markets in Cagayan de Oro City.",
+   "tech": "PHP 8.4+, Laravel 13, React 19, MySQL, Tailwind CSS, Javascript/Typescript, Laravel Herd",
+   "images": [],
+   "thumb": "",
+   "demo": "",
+   "repo": ""
   }
  ],
  "skills": [
