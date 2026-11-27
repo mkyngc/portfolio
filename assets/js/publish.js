@@ -4,7 +4,7 @@
    The token lives only in this browser's localStorage. Use a fine-grained token limited to this one repository. */
 const Pub = (() => {
   const CFG = 'pf_gh', SHA = 'pf_sha', DIRTY = 'pf_dirty', FILE = 'data/content.json';
-  const EXT = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/gif': 'gif', 'image/webp': 'webp', 'image/svg+xml': 'svg', 'image/x-icon': 'ico', 'image/vnd.microsoft.icon': 'ico', 'application/pdf': 'pdf' };
+  const EXT = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/gif': 'gif', 'image/webp': 'webp', 'image/avif': 'avif', 'image/bmp': 'bmp', 'image/svg+xml': 'svg', 'image/x-icon': 'ico', 'image/vnd.microsoft.icon': 'ico', 'application/pdf': 'pdf' };
   const cfg = () => { try { return JSON.parse(localStorage.getItem(CFG)) || {}; } catch { return {}; } };
   const setCfg = c => localStorage.setItem(CFG, JSON.stringify(c));
   const ready = () => { const c = cfg(); return !!(c.owner && c.repo && c.token); };
