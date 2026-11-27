@@ -258,3 +258,7 @@ a.c-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(139,74,82,
 .c-card strong{font-size:1.05rem;word-break:break-word}
 @media(max-width:860px){.c-cards{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.blob,.dot1,.dot2,.ring,.float,.pill .dot,body{animation:none!important}}
+/* sticky footer: on short pages the footer sits at the bottom of the window instead of leaving an empty gap under it */
+body[data-page-title]{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+body[data-page-title]>main{flex:1 0 auto}
+body[data-page-title]>footer{margin-top:auto;flex-shrink:0}
