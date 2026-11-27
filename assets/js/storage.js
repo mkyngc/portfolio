@@ -55,7 +55,8 @@ const Store = (() => {
       if (localStorage.getItem(KEY) !== json) return 'blocked';
       mem = d; return true; // read back to confirm it was really kept
     } catch (e) {
-      return e && (e.name === 'QuotaExceededError' || e.code === 22 || e.code === 1014) ? 'quota' : 'blocked';
+      if (e && (e.name === 'QuotaExceededError' || e.code === 22 || e.code === 1014)) { mem = d; return 'quota'; } // keep full-size content in memory so it can still be published
+      return 'blocked';
     }
   };
   const available = () => { try { localStorage.setItem('pf_probe', '1'); localStorage.removeItem('pf_probe'); return true; } catch { return false; } };
